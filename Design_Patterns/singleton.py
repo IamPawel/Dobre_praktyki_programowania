@@ -14,9 +14,7 @@ class LibraryCatalog:
 
     def _initialize(self):
         # initialize the object
-        self.books = [
-            {"title": "Metro2033", "author": "Dmitry Glukhovsky"},
-        ]
+        self.books = []
 
     def add_book(self, title, author):
         self.books.append({"title": title, "author": author})
@@ -45,4 +43,5 @@ c2.add_book("The Witcher", "Andrzej Sapkowski")
 c1.show_books()
 
 # Check if c1 and c2 are the same object
-print(c1 is c2)
+if c1 is c2:
+    print("c1 and c2 are the same instance")
