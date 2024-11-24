@@ -1,0 +1,6 @@
+Kod implementuje wzorzec Facade przy użyciu klasy LibraryInterface, która działa jako prostszy interfejs do interakcji z systemem biblioteki. Dzięki tej klasie, użytkownicy mogą wykonywać typowe operacje (dodawanie książek, przeszukiwanie katalogu, wypożyczanie książek) bez konieczności korzystania bezpośrednio z LibraryCatalog
+
+Klasa LibraryInterface:
+Zapewnia uproszczony interfejs do różnych operacji związanych z biblioteką.
+Zawiera metody takie jak add_book(), show_books(), delete_book(), available_books(), find_by_author() i who_wrote().
+Wewnątrz metody LibraryInterface wszystkie operacje są przekazywane do odpowiednich metod podsystemu LibraryCatalog co upraszcza interakcję dla użytkowników.
