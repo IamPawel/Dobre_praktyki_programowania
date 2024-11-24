@@ -1,0 +1,23 @@
+Klasa UserFactory implementuje wzorzec projektowy Factory, umożliwiający dynamiczne tworzenie obiektów różnych typów użytkowników (Student, Teacher, Librarian) na podstawie przekazanych danych wejściowych (nazwy użytkownika i roli).
+
+Wzorzec Factory został zastosowany, aby:
+- Ułatwić dodawanie nowych typów użytkowników w przyszłości bez modyfikacji kodu w innych częściach systemu.
+
+
+Klasa UserFactory:
+Zawiera statyczną metodę create_user(name, role), która na podstawie wartości role zwraca odpowiedni obiekt:
+Student dla roli "student".
+Teacher dla roli "teacher".
+Librarian dla roli "librarian".
+Jeśli rola jest nieznana, rzuca wyjątek ValueError.
+
+
+Hierarchia klas użytkowników:
+User: Klasa bazowa, która przechowuje podstawowe dane użytkownika, takie jak name.
+Student, Teacher, Librarian: Dziedziczą po klasie User, rozszerzając ją o:
+Różne wartości pola role.
+Specyficzne dla każdego typu listy permissions określające ich uprawnienia.
+
+
+Tworzenie użytkowników:
+Metoda create_user pozwala tworzyć obiekty konkretnych typów bez bezpośredniego odwoływania się do konstruktorów poszczególnych klas, co czyni kod bardziej elastycznym i łatwym w rozbudowie.
