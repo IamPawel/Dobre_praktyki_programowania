@@ -1,0 +1,8 @@
+Klasa LibraryIterator (Iterator Katalogu Książek)
+
+Zaimplementowane metody iteratora:
+__next__(): Ta metoda przechodzi przez książki w katalogu i zwraca kolejne książki, aż do momentu gdy nie będzie już więcej książek. Wtedy następuje StopIteratio
+
+filter_by_author(): Filtruje książki na podstawie autora i zwraca tylko te książki, które zostały napisane przez wskaznego autora.
+
+filter_available_books(): Filtruje książki i zwraca tylko te, które są dostępne (is_available = True).
