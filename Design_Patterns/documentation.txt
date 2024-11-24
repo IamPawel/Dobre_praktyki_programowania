@@ -1,0 +1,10 @@
+Klasa LibraryCatalog wykorzystuje wzorzec projektowy Singleton, zapewniając, że w całym programie istnieje tylko jedna instancja tej klasy. 
+Singleton jest realizowany poprzez nadpisanie metody __new__, która gwarantuje, że każda próba utworzenia obiektu klasy LibraryCatalog zwróci tę samą instancję.
+
+Wzorzec Singleton został zastosowany, aby:
+- Utrzymać spójność danych w systemie ponieważ katalog biblioteki powinien być jednolity i dostępny w całej aplikacji z jednego miejsca.
+
+- Zapobiec problemom związanym z wielokrotnym tworzeniem instancji katalogu.
+
+
+Wprowadzenie wzorca Singleton do klasy LibraryCatalog powoduje, że wszystkie operacje na katalogu książek (dodawanie, usuwanie, przeglądanie) są wykonywane na jednej instancji, co eliminuje ryzyko rozproszenia danych.
