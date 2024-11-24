@@ -1,6 +1,8 @@
 # Factory:
 # Zastosowanie: Zaimplementuj UserFactory, która tworzy różne typy obiektów użytkowników (np. Student, Nauczyciel, Bibliotekarz) na podstawie danych wejściowych. Każdy typ użytkownika może mieć różne uprawnienia do wypożyczania książek.
 # Zadanie: Utwórz metodę fabryki do generowania różnych typów użytkowników i pokaż, jak fabryka umożliwia elastyczne tworzenie obiektów.
+from singleton import LibraryCatalog
+from observer import Observer
 
 
 class UserFactory:
@@ -38,18 +40,9 @@ class Librarian(User):
     def __init__(self, name):
         super().__init__(name)
         self.role = "librarian"
-        self.permissions = ["show_books", "add_book", "remove_book"]
+        self.permissions = ["show_books", "add_book", "remove_book", "notify"]
 
-
-# create users
-users = [
-    UserFactory.create_user("Paweł", "student"),
-    UserFactory.create_user("Kszyszek", "teacher"),
-    UserFactory.create_user("Tomek", "librarian"),
-]
-
-# show users
-for user in users:
-    print(
-        f"Name: {user.name}, Role: {user.role}, Permissions: {', '.join(user.permissions)}"
-    )
+        # create instance of observer
+        observer = Observer(self.name)
+        self.catalog = LibraryCatalog()
+        self.catalog.add_observer(observer)

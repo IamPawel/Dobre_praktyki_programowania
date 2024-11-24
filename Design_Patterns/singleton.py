@@ -1,6 +1,7 @@
 # Singleton:
 # Zastosowanie: Zaimplementuj klasę LibraryCatalog, która zapewnia, że w programie istnieje tylko jedna instancja katalogu. Klasa ta będzie odpowiedzialna za przechowywanie i zarządzanie danymi o książkach.
 # Zadanie: Utwórz klasę Singleton i pokaż, jak uzyskać do niej dostęp z różnych części programu.
+from observer import Observer
 
 
 class LibraryCatalog:
@@ -15,13 +16,17 @@ class LibraryCatalog:
     def _initialize(self):
         # initialize the object
         self.books = []
+        self.observers = []  # list of observers
 
-    def add_book(self, title, author):
-        self.books.append({"title": title, "author": author})
+    def add_book(self, title, author, is_available=True):
+        self.books.append(
+            {"title": title, "author": author, "is_available": is_available}
+        )
 
     def show_books(self):
         for book in self.books:
-            print(f"{book['title']} - {book['author']}")
+            status = "available" if book["is_available"] else "not available"
+            print(f"{book['title']} - {book['author']} ({status})")
 
     def delete_book(self, title):
         for book in self.books:
@@ -32,16 +37,35 @@ class LibraryCatalog:
                 except ValueError:
                     print(f"Book {title} not found")
 
+    def borrow_book(self, title):
+        for book in self.books:
+            if book["title"] == title:
+                if book["is_available"]:
+                    book["is_available"] = False
+                    print(f"Book {title} borrowed")
+                    self.notify_observers(title, "borrowed")
+                else:
+                    print(f"Book {title} is not available")
+                return
+        print(f"Book {title} not found")
 
-# Example of usage
-c1 = LibraryCatalog()
-c2 = LibraryCatalog()
+    def return_book(self, title):
+        for book in self.books:
+            if book["title"] == title:
+                if not book["is_available"]:
+                    book["is_available"] = True
+                    print(f"Book {title} returned")
+                    self.notify_observers(title, "returned")
+                return
+        print(f"Book {title} not found")
 
-c1.add_book("Harry Potter", "J.K. Rowling")
-c2.add_book("The Witcher", "Andrzej Sapkowski")
+    # Observer:
+    def add_observer(self, observer):
+        self.observers.append(observer)
 
-c1.show_books()
+    def delete_observer(self, observer):
+        self.observers.remove(observer)
 
-# Check if c1 and c2 are the same object
-if c1 is c2:
-    print("c1 and c2 are the same instance")
+    def notify_observers(self, title, event):
+        for observer in self.observers:
+            observer.update(title, event)
