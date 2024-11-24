@@ -1,7 +1,7 @@
 # Factory:
 # Zastosowanie: Zaimplementuj UserFactory, która tworzy różne typy obiektów użytkowników (np. Student, Nauczyciel, Bibliotekarz) na podstawie danych wejściowych. Każdy typ użytkownika może mieć różne uprawnienia do wypożyczania książek.
 # Zadanie: Utwórz metodę fabryki do generowania różnych typów użytkowników i pokaż, jak fabryka umożliwia elastyczne tworzenie obiektów.
-from Design_Patterns.library_catalog import LibraryCatalog
+from library_catalog import LibraryCatalog
 from observer import Observer
 
 

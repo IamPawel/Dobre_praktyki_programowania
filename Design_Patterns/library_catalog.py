@@ -1,9 +1,3 @@
-# Singleton:
-# Zastosowanie: Zaimplementuj klasę LibraryCatalog, która zapewnia, że w programie istnieje tylko jedna instancja katalogu. Klasa ta będzie odpowiedzialna za przechowywanie i zarządzanie danymi o książkach.
-# Zadanie: Utwórz klasę Singleton i pokaż, jak uzyskać do niej dostęp z różnych części programu.
-from observer import Observer
-
-
 class LibraryCatalog:
     _instance = None
 

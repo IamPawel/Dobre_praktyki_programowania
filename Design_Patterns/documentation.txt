@@ -1,0 +1,18 @@
+Kod implementuje wzorzec Observer który umożliwia informowanie zarejestrowanych obserwatorów o określonych zdarzeniach w systemie zarządzania biblioteką, takich jak wypożyczenie lub zwrot książki.
+
+
+Klasa Observer:
+Reprezentuje obserwatora, czyli użytkownika zapisującego się na powiadomienia.
+Metoda update() jest wywoływana gdy zachodzi zdarzenie i wyświetla powiadomienie.
+
+
+Klasa LibraryCatalog:
+Rozszerzona o listę observers, która przechowuje zarejestrowanych obserwatorów.
+Zawiera metody:
+add_observer(observer): dodaje obserwatora do listy.
+delete_observer(observer): usuwa obserwatora z listy.
+notify_observers(title, event): powiadamia wszystkich zarejestrowanych obserwatorów o zdarzeniu (książka wypożyczona lub zwrócona).
+
+
+Powiadamianie o zdarzeniach:
+W metodach borrow_book() i return_book() wywoływana jest metoda notify_observers(), która iteruje przez listę obserwatorów i wywołuje ich metodę update().
