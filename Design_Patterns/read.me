@@ -1,0 +1,59 @@
+Scenariusz:
+
+
+
+Twoim zadaniem jest stworzenie uproszczonego systemu zarządzania biblioteką, który symuluje sposób, w jaki biblioteka zarządza książkami, użytkownikami i powiadomieniami. System powinien umożliwiać zarządzanie książkami, interakcję użytkowników oraz powiadomienia o wypożyczeniach i zwrotach książek.
+
+
+
+Wymagania i Użycie Wzorów Projektowych:
+
+
+
+   1.    Singleton:
+
+   •    Zastosowanie: Zaimplementuj klasę LibraryCatalog, która zapewnia, że w programie istnieje tylko jedna instancja katalogu. Klasa ta będzie odpowiedzialna za przechowywanie i zarządzanie danymi o książkach.
+
+   •    Zadanie: Utwórz klasę Singleton i pokaż, jak uzyskać do niej dostęp z różnych części programu.
+
+   2.    Adapter:
+
+   •    Zastosowanie: Wyobraź sobie, że system biblioteczny musi importować dane o książkach z różnych formatów (np. JSON, CSV). Stwórz klasę adaptera, która pozwoli na przetwarzanie i integrację różnych formatów danych do standardowego formatu używanego w LibraryCatalog.
+
+   •    Zadanie: Zaimplementuj wzorzec adaptera, który może czytać dane książek z różnych formatów (JSON, XML, CSV) i przekształcać je na standardowy format.
+
+   3.    Factory:
+
+   •    Zastosowanie: Zaimplementuj UserFactory, która tworzy różne typy obiektów użytkowników (np. Student, Nauczyciel, Bibliotekarz) na podstawie danych wejściowych. Każdy typ użytkownika może mieć różne uprawnienia do wypożyczania książek.
+
+   •    Zadanie: Utwórz metodę fabryki do generowania różnych typów użytkowników i pokaż, jak fabryka umożliwia elastyczne tworzenie obiektów.
+
+   4.    Observer:
+
+   •    Zastosowanie: Skonfiguruj system powiadomień, w którym użytkownicy mogą zapisywać się na powiadomienia o wypożyczeniu lub zwrocie książek. LibraryCatalog będzie działał jako podmiot, a użytkownicy jako obserwatorzy.
+
+   •    Zadanie: Zaimplementuj wzorzec obserwatora, aby powiadamiać użytkowników o określonych zdarzeniach (np. książka, którą chcą, staje się dostępna).
+
+   5.    Facade:
+
+   •    Zastosowanie: Stwórz klasę LibraryInterface, która zapewnia uproszczony interfejs do wykonywania typowych operacji, takich jak wyszukiwanie książek, wypożyczanie książki i jej zwracanie. Klasa ta będzie wywoływać złożone podsystemy, takie jak LibraryCatalog i UserManagement.
+
+   •    Zadanie: Zaimplementuj wzorzec fasady, aby uprościć interakcję z podsystemami biblioteki.
+
+   6.    Iterator:
+
+   •    Zastosowanie: Zaimplementuj iterator do przeglądania listy książek w katalogu lub listy użytkowników. Może to być użyte do wyświetlania szczegółów książek lub informacji o użytkownikach w ustrukturyzowany sposób.
+
+   •    Zadanie: Stwórz wzorzec iteratora, który umożliwia iterację po kolekcji LibraryCatalog zawierającej książki lub UserManagement zarejestrowanych użytkowników.
+
+
+
+Oczekiwane Wyniki:
+
+
+
+   •    Implementacja kodu: Każdy wzorzec powinien być zaimplementowany i zintegrowany z systemem zgodnie z opisem.
+
+   •    Dokumentacja: Przygotuj krótkie wyjaśnienie użycia każdego wzorca, z uzasadnieniem wyboru i opisem, w jaki sposób wzorzec poprawia system zarządzania biblioteką.
+
+   •    Prezentacja: Przygotuj prosty program testowy lub skrypt pokazujący działanie każdego wzorca w systemie.
