@@ -5,7 +5,7 @@
 import json
 import csv
 import xml.etree.ElementTree as ET
-from singleton import LibraryCatalog
+from library_catalog import LibraryCatalog
 
 
 class Adapter:

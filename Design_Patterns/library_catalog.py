@@ -6,7 +6,7 @@
 class LibraryCatalog:
     _instance = None
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls):
         if not cls._instance:
             cls._instance = super().__new__(cls)
             cls._instance._initialize()  # private method to initialize the object
@@ -31,17 +31,3 @@ class LibraryCatalog:
                     print(f"Book {title} deleted")
                 except ValueError:
                     print(f"Book {title} not found")
-
-
-# Example of usage
-c1 = LibraryCatalog()
-c2 = LibraryCatalog()
-
-c1.add_book("Harry Potter", "J.K. Rowling")
-c2.add_book("The Witcher", "Andrzej Sapkowski")
-
-c1.show_books()
-
-# Check if c1 and c2 are the same object
-if c1 is c2:
-    print("c1 and c2 are the same instance")

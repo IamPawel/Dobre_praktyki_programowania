@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
     <book>
-        <title>B_xml</title>
-        <author>xxxx</author>
+        <title>Book1_xml</title>
+        <author>Karol</author>
     </book>
     <book>
-        <title>B_7</title>
-        <author>77777777</author>
+        <title>Book2_xml</title>
+        <author>Roman</author>
     </book>
 </catalog>

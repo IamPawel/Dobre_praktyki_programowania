@@ -1,0 +1,13 @@
+Klasa Adapter implementuje wzorzec projektowy Adapter, który umożliwia przekształcanie danych o książkach z różnych formatów (JSON, CSV, XML) do ujednoliconego formatu, obsługiwanego przez system LibraryCatalog. Klasa pełni rolę pośrednika między zewnętrznymi źródłami danych a katalogiem biblioteki.
+
+Wzorzec Adapter został zastosowany, aby:
+- Umożliwić integrację danych pochodzących z różnych źródeł bez konieczności modyfikowania istniejącego kodu klasy LibraryCatalog.
+
+- Oddzielić logikę odczytu danych od logiki zarządzania katalogiem książek.
+
+- Ułatwić rozszerzanie systemu na obsługę nowych formatów danych przez dodanie kolejnych metod w klasie Adapter.
+
+Wprowadzenie Adaptera:
+- Gwarantuje elastyczność kodu przez obsługę różnych formatów danych bez konieczności ingerencji w kod katalogu.
+
+- Gwarantuje modularność gdyż logika odpowiedzialna za interpretację formatów danych jest zamknięta w klasie Adapter
