@@ -1,10 +1,9 @@
-from singleton import LibraryCatalog
+from Design_Patterns.library_catalog import LibraryCatalog
 from factory import UserFactory
-from observer import Observer
 import time
 
 
-librarian = UserFactory.create_user("John", "librarian")
+librarian = UserFactory.create_user("Kacper", "librarian")
 
 catalog = LibraryCatalog()
 catalog.add_book("Harry Potter", "J.K. Rowling", True)
