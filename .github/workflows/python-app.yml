@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pytest-cov
+        pip install flake8 pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Lint with flake8
@@ -41,4 +41,5 @@ jobs:
         mkdir -p coverage_reports
         mv coverage.xml coverage_reports/
         echo "Coverage report available at coverage_reports/coverage.xml"
+
 
