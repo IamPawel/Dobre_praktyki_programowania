@@ -1,12 +1,9 @@
 import unittest
-from unittest.mock import Mock, create_autospec
+from unittest.mock import create_autospec
 from main import (
     PaymentProcessor,
     PaymentGateway,
     TransactionStatus,
-    NetworkException,
-    PaymentException,
-    RefundException,
     TransactionResult,
 )
 
