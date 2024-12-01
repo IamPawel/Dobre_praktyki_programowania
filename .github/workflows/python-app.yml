@@ -36,8 +36,7 @@ jobs:
 
     - name: Run tests with pytest and generate coverage report
       run: |
-        pytest --cov=TDD.main --cov-report=xml  # Uruchomienie testów z generowaniem raportu
-        # Optional: Upload the coverage report as an artifact
+        pytest --cov=TDD --cov-report=xml        # Optional: Upload the coverage report as an artifact
         mkdir -p coverage_reports
         mv coverage.xml coverage_reports/
         echo "Coverage report available at coverage_reports/coverage.xml"
