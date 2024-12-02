@@ -3,9 +3,9 @@ from enum import Enum
 
 
 class TransactionStatus(Enum):
-    PENDING = "PENDING"
-    COMPLETED = "COMPLETED"
-    FAILED = "FAILED"
+    PENDING = 'PENDING'
+    COMPLETED = 'COMPLETED'
+    FAILED = 'FAILED'
 
 
 class TransactionResult:
